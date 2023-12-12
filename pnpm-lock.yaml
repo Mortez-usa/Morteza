@@ -420,20 +420,6 @@ packages:
       '@lezer/common': 1.0.3
     dev: false
 
-  /@codemirror/autocomplete@6.4.2(@codemirror/language@6.8.0)(@codemirror/state@6.2.1)(@codemirror/view@6.15.3)(@lezer/common@1.0.3):
-    resolution: {integrity: sha512-8WE2xp+D0MpWEv5lZ6zPW1/tf4AGb358T5GWYiKEuCP8MvFfT3tH2mIF9Y2yr2e3KbHuSvsVhosiEyqCpiJhZQ==}
-    peerDependencies:
-      '@codemirror/language': ^6.0.0
-      '@codemirror/state': ^6.0.0
-      '@codemirror/view': ^6.0.0
-      '@lezer/common': ^1.0.0
-    dependencies:
-      '@codemirror/language': 6.8.0
-      '@codemirror/state': 6.2.1
-      '@codemirror/view': 6.15.3
-      '@lezer/common': 1.0.3
-    dev: false
-
   /@codemirror/autocomplete@6.9.0(@codemirror/language@6.8.0)(@codemirror/state@6.2.1)(@codemirror/view@6.15.3)(@lezer/common@1.0.3):
     resolution: {integrity: sha512-Fbwm0V/Wn3BkEJZRhr0hi5BhCo5a7eBL6LYaliPjOSwCyfOpnjXY59HruSxOUNV+1OYer0Tgx1zRNQttjXyDog==}
     peerDependencies:
@@ -720,6 +706,7 @@ packages:
 
   /@emotion/memoize@0.7.4:
     resolution: {integrity: sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw==}
+    requiresBuild: true
     dev: false
     optional: true
 
@@ -1666,7 +1653,7 @@ packages:
       sanity: ^3
       styled-components: ^5.2
     dependencies:
-      '@codemirror/autocomplete': 6.4.2(@codemirror/language@6.8.0)(@codemirror/state@6.2.1)(@codemirror/view@6.15.3)(@lezer/common@1.0.3)
+      '@codemirror/autocomplete': 6.4.2(@codemirror/language@6.6.0)(@codemirror/state@6.2.1)(@codemirror/view@6.9.3)(@lezer/common@1.0.3)
       '@codemirror/commands': 6.2.2
       '@codemirror/lang-html': 6.4.3
       '@codemirror/lang-java': 6.0.1
@@ -2333,7 +2320,7 @@ packages:
       '@codemirror/state': '>=6.0.0'
       '@codemirror/view': '>=6.0.0'
     dependencies:
-      '@codemirror/autocomplete': 6.4.2(@codemirror/language@6.8.0)(@codemirror/state@6.2.1)(@codemirror/view@6.15.3)(@lezer/common@1.0.3)
+      '@codemirror/autocomplete': 6.4.2(@codemirror/language@6.6.0)(@codemirror/state@6.2.1)(@codemirror/view@6.9.3)(@lezer/common@1.0.3)
       '@codemirror/commands': 6.2.2
       '@codemirror/language': 6.6.0
       '@codemirror/lint': 6.4.0
@@ -5476,7 +5463,7 @@ packages:
       levn: 0.3.0
       prelude-ls: 1.1.2
       type-check: 0.3.2
-      word-wrap: 1.2.3
+      word-wrap: 1.2.5
     dev: false
 
   /optionator@0.9.1:
@@ -5488,7 +5475,7 @@ packages:
       levn: 0.4.1
       prelude-ls: 1.2.1
       type-check: 0.4.0
-      word-wrap: 1.2.3
+      word-wrap: 1.2.5
     dev: true
 
   /p-finally@2.0.1:
@@ -7366,8 +7353,8 @@ packages:
     dependencies:
       isexe: 2.0.0
 
-  /word-wrap@1.2.3:
-    resolution: {integrity: sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==}
+  /word-wrap@1.2.5:
+    resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}
     engines: {node: '>=0.10.0'}
 
   /wrap-ansi@7.0.0:
