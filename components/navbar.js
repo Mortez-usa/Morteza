@@ -32,14 +32,14 @@ export default function Navbar(props) {
       href: "/archive"
     },
     {
-      label: "Pro Version",
-      href: "https://stablo-pro.web3templates.com/",
+      label: "Photography",
+      href: "/",
       external: true,
-      badge: "new"
+      // badge: "new"
     },
     {
-      label: "Download",
-      href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
+      label: "Projects",
+      href: "/",
       external: true
     }
   ];
@@ -86,7 +86,7 @@ export default function Navbar(props) {
                       />
                     ) : (
                       <span className="block text-center">
-                        Stablo
+                        Morteza Maddahi
                       </span>
                     )}
                   </Link>
@@ -100,7 +100,7 @@ export default function Navbar(props) {
                       />
                     ) : (
                       <span className="block text-center">
-                        Stablo
+                        Morteza Maddahi
                       </span>
                     )}
                   </Link>
