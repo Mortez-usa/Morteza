@@ -23,8 +23,8 @@ export default defineConfig({
   name: "default",
   title: "Stablo Template",
   basePath: "/studio",
-  projectId: projectId,
-  dataset: dataset,
+  projectId: "1j9i5rny",
+  dataset: "production",
 
   plugins: [
     deskTool({
