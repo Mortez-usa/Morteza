@@ -1,19 +1,19 @@
 import React from 'react';
+import Script from 'next/script';
 
 export default function page() {
 	return (
 		<div className='min-h-screen'>
-			<head>
-				<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGHHHD31CJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
+			<Script
+				async
+				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}></Script>
+			<Script id='google analytics' strategy='afterInteractive'>
+				{`window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-FGHHHD31CJ');
-</script>
-			</head>
+  gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');`}
+			</Script>
 			<div className='grid grid-cols-[100px_minmax(400px,_1fr)_100px] justify-items-start'>
 				<div></div>
 				<div className='grid grid-col-2 '>
@@ -129,9 +129,8 @@ export default function page() {
 					<div className='border-2 border-gray-100 p-20'>
 						<h1 className='font-bold'>MyrostarHealth</h1>
 						<p>
-							<br />
-							A DPC clinic with unique approach to primary care
-							and relationship between doctors and patients
+							<br />A DPC clinic with unique approach to primary
+							care and relationship between doctors and patients
 						</p>
 					</div>
 				</div>

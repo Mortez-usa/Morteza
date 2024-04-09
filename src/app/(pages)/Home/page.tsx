@@ -1,20 +1,20 @@
 import React from 'react'
 import Image from 'next/image';
+import Script from 'next/script';
 
 export default function page() {
   return (
 		<div>
-			<head>
-				<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGHHHD31CJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
+			<Script
+				async
+				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}></Script>
+			<Script id='google analytics' strategy='afterInteractive'>
+				{`window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-FGHHHD31CJ');
-</script>
-			</head>
+  gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');`}
+			</Script>
 			<div className=''>
 				<div className='flex justify-center gap-14 mt-36 text-gray-700'>
 					<h1 className='w-[400px]'>
@@ -25,10 +25,17 @@ export default function page() {
 							href='https://archinect.com/Morteza-Maddahi'>
 							architecture design
 						</a>{' '}
-						who also has a keen interest in entrepreneurship,
-						{' '}<a className='text-blue-500' href="https://www.docktorly.com">software</a>{' '}, and emerging technologies. I have a genuine
-						passion for nature, enjoy watching{' '}
-						<a className='text-blue-500' href='https://editorial.rottentomatoes.com/guide/essential-sci-fi-movies-of-all-time/'>
+						who also has a keen interest in entrepreneurship,{' '}
+						<a
+							className='text-blue-500'
+							href='https://www.docktorly.com'>
+							software
+						</a>{' '}
+						, and emerging technologies. I have a genuine passion
+						for nature, enjoy watching{' '}
+						<a
+							className='text-blue-500'
+							href='https://editorial.rottentomatoes.com/guide/essential-sci-fi-movies-of-all-time/'>
 							Science fiction
 						</a>{' '}
 						movies, and place great value on cultivating strong
