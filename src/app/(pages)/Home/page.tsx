@@ -16,7 +16,7 @@ export default function page() {
 
   gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');`}
 			</Script>
-
+			{/*.env*/}
 			<div>
 				<div className=''>
 					<div className='flex justify-center gap-14 mt-36 text-gray-700'>
