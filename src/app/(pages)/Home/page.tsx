@@ -4,6 +4,17 @@ import Image from 'next/image';
 export default function page() {
   return (
 		<div>
+			<head>
+				<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGHHHD31CJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FGHHHD31CJ');
+</script>
+			</head>
 			<div className=''>
 				<div className='flex justify-center gap-14 mt-36 text-gray-700'>
 					<h1 className='w-[400px]'>

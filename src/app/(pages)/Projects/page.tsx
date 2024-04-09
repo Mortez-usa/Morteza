@@ -3,6 +3,17 @@ import React from 'react';
 export default function page() {
 	return (
 		<div className='min-h-screen'>
+			<head>
+				<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGHHHD31CJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FGHHHD31CJ');
+</script>
+			</head>
 			<div className='grid grid-cols-[100px_minmax(400px,_1fr)_100px] justify-items-start'>
 				<div></div>
 				<div className='grid grid-col-2 '>
