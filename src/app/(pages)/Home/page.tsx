@@ -5,6 +5,9 @@ import Script from 'next/script';
 export default function page() {
   return (
 	<>
+	<div>
+		{/*google analytics*/}
+	</div>
 	      <Script
         async
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
