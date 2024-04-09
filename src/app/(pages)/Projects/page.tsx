@@ -12,7 +12,7 @@ export default function page() {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');`}
+  gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');`}
 			</Script>
 
 			<div className='min-h-screen'>
