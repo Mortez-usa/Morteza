@@ -4,8 +4,8 @@ import Script from 'next/script';
 
 export default function page() {
   return (
-		<div>
-			<Script
+	<>
+	<Script
 				async
 				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}></Script>
 			<Script id='google analytics' strategy='afterInteractive'>
@@ -15,6 +15,8 @@ export default function page() {
 
   gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');`}
 			</Script>
+		<div>
+			
 			<div className=''>
 				<div className='flex justify-center gap-14 mt-36 text-gray-700'>
 					<h1 className='w-[400px]'>
@@ -55,5 +57,6 @@ export default function page() {
 				</div>
 			</div>
 		</div>
+	</>
   );
 }
