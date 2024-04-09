@@ -4,16 +4,6 @@ import Script from 'next/script';
 export default function page() {
 	return (
 		<div className='min-h-screen'>
-			<Script
-				async
-				src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}></Script>
-			<Script id='google analytics' strategy='afterInteractive'>
-				{`window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');`}
-			</Script>
 			<div className='grid grid-cols-[100px_minmax(400px,_1fr)_100px] justify-items-start'>
 				<div></div>
 				<div className='grid grid-col-2 '>
