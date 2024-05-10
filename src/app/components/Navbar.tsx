@@ -10,9 +10,10 @@ export default function Navbar() {
 						<a href='/'>Morteza Maddahi</a>
 					</div>
 					<div className='flex justify-end font-bold'>
-						<Link href='./Projects'>
-							Projects
-						</Link>{' '}
+						<Link href='./Projects'>Projects</Link>{' '}
+					</div>
+					<div className='flex justify-end font-bold'>
+						<Link href='./Projects'>Schedule a meeting</Link>{' '}
 					</div>
 				</div>
 			</header>
