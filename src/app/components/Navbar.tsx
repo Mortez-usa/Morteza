@@ -9,11 +9,13 @@ export default function Navbar() {
 					<div className='text-[24px] font-bold'>
 						<a href='/'>Morteza Maddahi</a>
 					</div>
-					<div className='flex justify-end font-bold'>
+					<div className='flex justify-end font-bold gap-6'>
 						<Link href='./Projects'>Projects</Link>{' '}
-					</div>
-					<div className='flex justify-end font-bold'>
-						<Link href='./Projects'>Schedule a meeting</Link>{' '}
+						<div className='flex justify-end font-bold'>
+							<Link href='https://calendar.app.google/zGCryN5QUTXBQfxe8'>
+								Schedule a meeting
+							</Link>{' '}
+						</div>
 					</div>
 				</div>
 			</header>
