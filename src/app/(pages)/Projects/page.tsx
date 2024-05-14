@@ -20,8 +20,8 @@ export default function page() {
 					<div></div>
 					<div className='grid grid-col-2 '>
 						<div className='border-2 border-gray-100 mb-4 p-20'>
-							<h1 className='font-bold'>Docktorly</h1>
-							<h3 className='font-bold'>
+							<h1 className='text-4xl font-bold'>Docktorly</h1>
+							<h3 className='font-bold text-lg'>
 								On-demand virtual medical consultation platform
 								for direct primary care
 							</h3>
@@ -136,7 +136,9 @@ export default function page() {
 							</p>
 						</div>
 						<div className='border-2 border-gray-100 p-20'>
-							<h1 className='font-bold'>MyrostarHealth</h1>
+							<h1 className='text-4xl font-bold'>
+								MyrostarHealth
+							</h1>
 							<p>
 								<br />A DPC clinic with unique approach to
 								primary care and relationship between doctors
