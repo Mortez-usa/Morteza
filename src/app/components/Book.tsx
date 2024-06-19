@@ -4,7 +4,9 @@ import Image from 'next/image';
 export default function Book() {
 	return (
 		<div className='grid mr-64 ml-64 mt-52 text-gray-700'>
-			<div className='text-xl font-bold'>Books that I am reading...</div>
+			<div className='text-xl font-bold'>
+				Books I’m currently exploring...
+			</div>
 			<div className='grid grid-cols-3 text-gray-700 border-2 border-gray-100'>
 				<div className='grid grid-cols-2 gap-4 m-16 text-gray-700'>
 					<div>
