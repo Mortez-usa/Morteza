@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Script from 'next/script';
 
+
 export default function page() {
 	return (
 		<>
@@ -51,7 +52,7 @@ export default function page() {
 								width={200}
 								height={200}
 								alt='Picture of the author'
-								className='rounded-lg shadow-sm hover:opacity-50'
+								className='rounded-lg shadow-sm hover:opacity-90'
 							/>
 						</div>
 					</div>
