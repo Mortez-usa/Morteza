@@ -3,6 +3,7 @@ import { NextUIProvider } from '@nextui-org/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Index from './(pages)/Home/page';
 import Book from './components/Book';
+import Hero from './components/Hero';
 import Social from './components/Social';
 import Script from 'next/script';
 
@@ -23,6 +24,7 @@ export default function Home() {
 				<div className='min-h-screen'>
 					<Index />
 					<Book />
+					<Hero />
 					<Social />
 				</div>
 			</>

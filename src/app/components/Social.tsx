@@ -8,8 +8,7 @@ import { SlSocialYoutube } from 'react-icons/sl';
 
 export default function Social() {
 	return (
-		<div>
-			
+		<div className="mt-96">
 			<div className='h-96 grid grid-cols-1 justify-center content-center justify-items-center'>
 				<div className='flex gap-8'>
 					<div>

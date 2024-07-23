@@ -17,6 +17,30 @@ export default function page() {
   gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');`}
 			</Script>
 			{/*.env*/}
+			<head>{/* Open Graph */}
+			<meta property='og:type' content='website' />
+			<meta property='og:url' content='https://example.com' />
+			<meta property='og:title' content='Your Website Title' />
+			<meta
+				property='og:description'
+				content='Description of your website'
+			/>
+			<meta
+				property='og:image'
+				content='https://example.com/path/to/your/image.jpg'
+			/>
+
+			{/* Twitter Card */}
+			<meta name='twitter:card' content='summary_large_image' />
+			<meta name='twitter:title' content='Your Website Title' />
+			<meta
+				name='twitter:description'
+				content='Description of your website'
+			/>
+			<meta
+				name='twitter:image'
+				content='https://example.com/path/to/your/image.jpg'
+			/></head>
 			<div>
 				<div className=''>
 					<div className='flex justify-center gap-14 mt-36 text-gray-700'>
