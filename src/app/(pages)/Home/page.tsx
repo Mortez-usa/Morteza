@@ -27,7 +27,7 @@ export default function page() {
 			/>
 			<meta
 				property='og:image'
-				content='https://example.com/path/to/your/image.jpg'
+				content='/images/Morteza-pro.jpg'
 			/>
 
 			{/* Twitter Card */}
