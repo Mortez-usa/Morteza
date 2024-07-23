@@ -43,7 +43,7 @@ export default function page() {
 			/></head>
 			<div>
 				<div className=''>
-					<div className='flex justify-center gap-14 mt-36 text-gray-700'>
+					<div className='flex justify-center gap-14 mt-24 text-gray-700'>
 						<h1 className='w-[400px]'>
 							Hello, I&#39;m Morteza Maddahi, an individual with a
 							background in{' '}

@@ -1,5 +1,9 @@
 import React from 'react';
 import Script from 'next/script';
+import { Button, ButtonGroup } from '@nextui-org/button';
+import Image from 'next/image';
+import Link from 'next/link';
+
 
 export default function page() {
 	return (
@@ -134,6 +138,13 @@ export default function page() {
 								to disrupt the healthcare industry and deliver
 								significant value to our users.
 							</p>
+							<div>
+								<Button color='primary'>
+									<Link href='http://www.Docktorly.com/'>
+										Visit Docktorly
+									</Link>
+								</Button>
+							</div>
 						</div>
 						<div className='border-2 border-gray-100 p-20'>
 							<h1 className='text-4xl font-bold'>
@@ -142,8 +153,15 @@ export default function page() {
 							<p>
 								<br />A DPC clinic with unique approach to
 								primary care and relationship between doctors
-								and patients
+								and patients.
 							</p>
+							<div>
+								<Button color='primary'>
+								<Link href='http://www.myrostarhealth.com/'>
+									Visit Myrostar Health
+								</Link>
+							</Button>
+							</div>
 						</div>
 					</div>
 					<div></div>

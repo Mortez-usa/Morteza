@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-		<div className="relative mt-96">
+		<div className="relative mt-40">
 			<Image
 				src='/images/hero/green.png'
 				alt='hero'
