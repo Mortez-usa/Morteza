@@ -6,7 +6,7 @@ export default function Hero() {
   return (
 		<div className="relative mt-96">
 			<Image
-				src='/images/hero/green.jpg'
+				src='/images/hero/green.png'
 				alt='hero'
 				width={1920}
 				height={1080}

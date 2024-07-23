@@ -19,11 +19,11 @@ export default function page() {
 			{/*.env*/}
 			<head>{/* Open Graph */}
 			<meta property='og:type' content='website' />
-			<meta property='og:url' content='https://example.com' />
-			<meta property='og:title' content='Your Website Title' />
+			<meta property='og:url' content='https://mortezamaddahi.com' />
+			<meta property='og:title' content='Morteza Maddahi' />
 			<meta
 				property='og:description'
-				content='Description of your website'
+				content='Hello, I&#39;m Morteza Maddahi, an individual with a background in architecture design who also has a keen interest in entrepreneurship, software , and emerging technologies. I have a genuine passion for nature, enjoy watching Science fiction movies, and place great value on cultivating strong relationships with friends . Join me as I explore the harmonious blend of creativity, technology, and a love for life&#39;s simple pleasures.'
 			/>
 			<meta
 				property='og:image'
@@ -32,14 +32,14 @@ export default function page() {
 
 			{/* Twitter Card */}
 			<meta name='twitter:card' content='summary_large_image' />
-			<meta name='twitter:title' content='Your Website Title' />
+			<meta name='twitter:title' content='Morteza Maddahi' />
 			<meta
 				name='twitter:description'
-				content='Description of your website'
+				content='Hello, I&#39;m Morteza Maddahi, an individual with a background in architecture design who also has a keen interest in entrepreneurship, software , and emerging technologies. I have a genuine passion for nature, enjoy watching Science fiction movies, and place great value on cultivating strong relationships with friends . Join me as I explore the harmonious blend of creativity, technology, and a love for life&#39;s simple pleasures.'
 			/>
 			<meta
 				name='twitter:image'
-				content='https://example.com/path/to/your/image.jpg'
+				content='/images/Morteza-pro.jpg'
 			/></head>
 			<div>
 				<div className=''>
