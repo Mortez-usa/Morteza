@@ -17,30 +17,32 @@ export default function page() {
   gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');`}
 			</Script>
 			{/*.env*/}
-			<head>{/* Open Graph */}
-			<meta property='og:type' content='website' />
-			<meta property='og:url' content='https://mortezamaddahi.com' />
-			<meta property='og:title' content='Morteza Maddahi' />
-			<meta
-				property='og:description'
-				content='Hello, I&#39;m Morteza Maddahi, an individual with a background in architecture design who also has a keen interest in entrepreneurship, software , and emerging technologies. I have a genuine passion for nature, enjoy watching Science fiction movies, and place great value on cultivating strong relationships with friends . Join me as I explore the harmonious blend of creativity, technology, and a love for life&#39;s simple pleasures.'
-			/>
-			<meta
-				property='og:image'
-				content='/images/Morteza-pro.jpg'
-			/>
+			<head>
+				<title>Home page</title>
+				<meta
+					name='Morteza Maddahi'
+					content='Morteza Maddahi, Personal Bio, Professional Background, Skills, Contact Information'
+				/>
+				{/* Open Graph */}
+				<meta property='og:type' content='website' />
+				<meta property='og:url' content='https://mortezamaddahi.com' />
+				<meta property='og:title' content='Morteza Maddahi' />
+				<meta
+					property='og:description'
+					content='Hello, I&#39;m Morteza Maddahi, an individual with a background in architecture design who also has a keen interest in entrepreneurship, software , and emerging technologies. I have a genuine passion for nature, enjoy watching Science fiction movies, and place great value on cultivating strong relationships with friends . Join me as I explore the harmonious blend of creativity, technology, and a love for life&#39;s simple pleasures.'
+				/>
+				<meta property='og:image' content='/images/Morteza-pro.jpg' />
 
-			{/* Twitter Card */}
-			<meta name='twitter:card' content='summary_large_image' />
-			<meta name='twitter:title' content='Morteza Maddahi' />
-			<meta
-				name='twitter:description'
-				content='Hello, I&#39;m Morteza Maddahi, an individual with a background in architecture design who also has a keen interest in entrepreneurship, software , and emerging technologies. I have a genuine passion for nature, enjoy watching Science fiction movies, and place great value on cultivating strong relationships with friends . Join me as I explore the harmonious blend of creativity, technology, and a love for life&#39;s simple pleasures.'
-			/>
-			<meta
-				name='twitter:image'
-				content='/images/Morteza-pro.jpg'
-			/></head>
+				{/* Twitter Card */}
+				<meta name='twitter:card' content='summary_large_image' />
+				<meta name='twitter:title' content='Morteza Maddahi' />
+				<meta
+					name='twitter:description'
+					content='Hello, I&#39;m Morteza Maddahi, an individual with a background in architecture design who also has a keen interest in entrepreneurship, software , and emerging technologies. I have a genuine passion for nature, enjoy watching Science fiction movies, and place great value on cultivating strong relationships with friends . Join me as I explore the harmonious blend of creativity, technology, and a love for life&#39;s simple pleasures.'
+				/>
+				<meta name='twitter:image' content='/images/Morteza-pro.jpg' />
+			</head>
+
 			<div>
 				<div className=''>
 					<div className='flex justify-center gap-14 mt-24 text-gray-700'>

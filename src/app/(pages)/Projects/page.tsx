@@ -21,7 +21,6 @@ export default function page() {
 
 			<div className='min-h-screen'>
 				<div className='grid grid-cols-[100px_minmax(400px,_1fr)_100px] justify-items-start'>
-					<div></div>
 					<div className='grid grid-col-2 '>
 						<div className='border-2 border-gray-100 mb-4 p-20'>
 							<h1 className='text-4xl font-bold'>Docktorly</h1>
@@ -162,6 +161,9 @@ export default function page() {
 								</Link>
 							</Button>
 							</div>
+						</div>
+						<div>
+							Veranook
 						</div>
 					</div>
 					<div></div>
