@@ -21,7 +21,7 @@
     "@radix-ui/react-toast": "^1.2.4",
     "@shadcn/ui": "^0.0.4",
     "@supabase/ssr": "^0.5.2",
-    "@supabase/supabase-js": "^2.47.10",
+    "@supabase/supabase-js": "^2.49.4",
     "@tailwindcss/postcss": "^4.1.6",
     "@vercel/analytics": "^1.1.1",
     "@vercel/edge-config": "^0.4.1",

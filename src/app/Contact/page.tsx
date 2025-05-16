@@ -2,15 +2,16 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Building } from 'lucide-react';
+import { Building, Mail, Video } from 'lucide-react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-
+import ContactForm from '@/components/ContactForm';
 
 // app/about/page.tsx
 export const metadata: Metadata = {
 	title: 'Contact Morteza Maddahi | Architectural Design',
-	description: 'Reach out to Morteza Maddahi for architectural design consultations and collaborative opportunities.',
+	description:
+		'Reach out to Morteza Maddahi for architectural design consultations and collaborative opportunities.',
 	openGraph: {
 		title: 'Contact Morteza Maddahi | Architectural Design',
 		description:
@@ -37,8 +38,6 @@ export const metadata: Metadata = {
 		canonical: 'https://mortezamaddahi.com/Contact',
 	},
 };
-
-
 
 export default function page() {
 	return (
@@ -75,18 +74,7 @@ export default function page() {
 								</div>
 
 								<div className='flex items-start'>
-									<svg
-										className='w-6 h-6 mr-4 text-accent mt-1'
-										fill='none'
-										viewBox='0 0 24 24'
-										stroke='currentColor'>
-										<path
-											strokeLinecap='round'
-											strokeLinejoin='round'
-											strokeWidth={2}
-											d='M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
-										/>
-									</svg>
+									<Mail className='w-6 h-6 mr-4 text-accent mt-1' />
 									<div>
 										<h3 className='font-medium text-lg'>
 											Email
@@ -100,26 +88,7 @@ export default function page() {
 								</div>
 
 								<div className='flex items-start'>
-									<svg
-										xmlns='http://www.w3.org/2000/svg'
-										width='24'
-										height='24'
-										viewBox='0 0 24 24'
-										fill='none'
-										stroke='currentColor'
-										stroke-width='2'
-										stroke-linecap='round'
-										stroke-linejoin='round'
-										className='lucide lucide-video-icon lucide-video w-6 h-6 mr-4 text-accent mt-1'>
-										<path d='m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5' />
-										<rect
-											x='2'
-											y='6'
-											width='14'
-											height='12'
-											rx='2'
-										/>
-									</svg>
+									<Video className='w-6 h-6 mr-4 text-accent mt-1' />
 									<div>
 										<h3 className='font-medium text-lg'>
 											Let&apos;s Meet
@@ -137,68 +106,7 @@ export default function page() {
 						</div>
 
 						<div>
-							<form
-								className='space-y-6'
-								name='contact'
-								id='contact-form'>
-								<div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
-									<div className='space-y-2'>
-										<label
-											htmlFor='name'
-											className='text-sm font-medium'>
-											Name
-										</label>
-										<Input
-											id='name'
-											placeholder='Your name'
-											className='border-gray-300 focus:border-accent focus:ring-accent'
-										/>
-									</div>
-									<div className='space-y-2'>
-										<label
-											htmlFor='email'
-											className='text-sm font-medium'>
-											Email
-										</label>
-										<Input
-											id='email'
-											type='email'
-											placeholder='Your email'
-											className='border-gray-300 focus:border-accent focus:ring-accent'
-										/>
-									</div>
-								</div>
-
-								<div className='space-y-2'>
-									<label
-										htmlFor='subject'
-										className='text-sm font-medium'>
-										Subject
-									</label>
-									<Input
-										id='subject'
-										placeholder='Subject'
-										className='border-gray-300 focus:border-accent focus:ring-accent'
-									/>
-								</div>
-
-								<div className='space-y-2'>
-									<label
-										htmlFor='message'
-										className='text-sm font-medium'>
-										Message
-									</label>
-									<Textarea
-										id='message'
-										placeholder='Tell us about your project'
-										className='border-gray-300 focus:border-accent focus:ring-accent min-h-[150px]'
-									/>
-								</div>
-
-								<Button className='bg-zinc-900 hover:bg-zinc-950 transition-colors text-white w-full py-6'>
-									Send Message
-								</Button>
-							</form>
+							<ContactForm />
 						</div>
 					</div>
 				</div>
