@@ -5,8 +5,42 @@ import Image from 'next/image';
 import '../globals.css';
 import { Button } from '@/components/ui/button';
 
+
+// app/about/page.tsx
+export const metadata: Metadata = {
+	title: 'About Morteza Maddahi | Architectural Design',
+	description: 'Learn about Morteza Maddahi',
+	openGraph: {
+		title: 'About Morteza Maddahi | Architectural Design',
+		description:
+			'Explore the journey of Morteza Maddahi — bridging architecture, software, and healthcare to shape real-world solutions.',
+		url: 'https://mortezamaddahi.com/About',
+		type: 'website',
+		images: [
+			{
+				url: 'https://mortezamaddahi.com/images/morteza-og.jpg',
+				width: 1200,
+				height: 630,
+				alt: 'Morteza Maddahi',
+			},
+		],
+	},
+	twitter: {
+		card: 'summary_large_image',
+		title: 'About Morteza Maddahi | Architectural Design',
+		description:
+			'Discover the story of Morteza Maddahi’s multidisciplinary journey and his commitment to real-world innovation.',
+		images: ['https://mortezamaddahi.com/images/morteza-og.jpg'],
+	},
+	alternates: {
+		canonical: 'https://mortezamaddahi.com/About',
+	},
+};
+
+
 export default function page() {
 	return (
+		
 		<div>
 			<section className='py-24 px-6 md:px-16 lg:px-24 bg-gray-50'>
 				<div className='max-w-7xl mx-auto'>
