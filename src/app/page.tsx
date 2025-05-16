@@ -1,33 +1,59 @@
+import React from 'react';
+import { Metadata } from 'next';
+import Link from 'next/link';
 import Image from 'next/image';
-import { NextUIProvider } from '@nextui-org/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import Index from './(pages)/Home/page';
-import Book from './components/Book';
-import Hero from './components/Hero';
-import Social from './components/Social';
-import Script from 'next/script';
+import './globals.css';
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from '@/components/ui/card';
 
-export default function Home() {
+export const metadata: Metadata = {
+	title: 'Morteza Maddahi',
+	description:
+		'Crafting innovative architectural solutions where form meets function. Explore my portfolio',
+	keywords: ['architect', 'architectural design', 'BIM', 'projects', 'about'],
+	authors: [{ name: 'Morteza Maddahi' }],
+	creator: 'Morteza Maddahi',
+	viewport: {
+		width: 'device-width',
+		initialScale: 1,
+	},
+	openGraph: {
+		type: 'website',
+		title: 'Morteza Maddahi',
+		description:
+			'Architecture is not just about buildings, but about creating spaces that enhance and transform life experiences',
+		siteName: 'Morteza Maddahi',
+	},
+};
+
+
+import Hero from '../components/Hero/page';
+import Projects from './Projects/page';
+import About from './About/page';
+import Contact from './Contact/page';
+import Footer from '../components/Footer/page';
+import Conceptdesign from './conceptdesign/page';
+
+
+export default function Page() {
 	return (
-		<NextUIProvider>
-			<>
-				<Script
-					async
-					src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}></Script>
-				<Script id='google analytics' strategy='afterInteractive'>
-					{`window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');`}
-				</Script>
-				<div className='min-h-screen'>
-					<Index />
-					<Book />
+		<>
+			<div className='flex flex-col min-h-screen'>
+				<div className="flex-grow">
 					<Hero />
-					<Social />
+					<Projects />
+					<Conceptdesign/>
+					<About />
+					<Contact />
 				</div>
-			</>
-		</NextUIProvider>
+				<Footer />
+			</div>
+		</>
 	);
 }
