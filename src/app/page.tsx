@@ -13,7 +13,7 @@ import {
 } from '@/components/ui/card';
 
 export const metadata: Metadata = {
-	title: 'Morteza Maddahi',
+	title: 'Shaping Space with Purpose: Architectural Thinking by Morteza Maddahi',
 	description:
 		'Crafting innovative architectural solutions where form meets function. Explore my portfolio',
 	keywords: ['architect', 'architectural design', 'BIM', 'projects', 'about'],
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 	},
 	openGraph: {
 		type: 'website',
-		title: 'Morteza Maddahi',
+		title: 'Shaping Space with Purpose: Architectural Thinking by Morteza Maddahi',
 		description:
 			'Architecture is not just about buildings, but about creating spaces that enhance and transform life experiences',
 		siteName: 'Morteza Maddahi',
