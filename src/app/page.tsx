@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 	title: 'Shaping Space with Purpose: Architectural Thinking by Morteza Maddahi',
 	description:
 		'Crafting innovative architectural solutions where form meets function. Explore my portfolio',
-	keywords: ['architect', 'architectural design', 'BIM', 'projects', 'about'],
+	keywords: ['architect', 'architectural design', 'BIM', 'projects', 'about', 'bellevue, wa'],
 	authors: [{ name: 'Morteza Maddahi' }],
 	creator: 'Morteza Maddahi',
 	viewport: {
