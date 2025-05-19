@@ -1,45 +1,42 @@
-import React from 'react';
+'use client';
+
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Building, Mail, Video } from 'lucide-react';
 import Link from 'next/link';
-import { Metadata } from 'next';
-import ContactForm from '@/components/ContactForm';
 
-// app/about/page.tsx
-export const metadata: Metadata = {
-	title: 'Contact Morteza Maddahi | Architectural Design',
-	description:
-		'Reach out to Morteza Maddahi for architectural design consultations and collaborative opportunities.',
-	openGraph: {
-		title: 'Contact Morteza Maddahi | Architectural Design',
-		description:
-			'Connect with Morteza Maddahi — bridging architecture, software, and healthcare to create innovative and functional design solutions.',
-		url: 'https://mortezamaddahi.com/Contact',
-		type: 'website',
-		images: [
-			{
-				url: 'https://mortezamaddahi.com/images/morteza-og.jpg',
-				width: 1200,
-				height: 630,
-				alt: 'Morteza Maddahi',
-			},
-		],
-	},
-	twitter: {
-		card: 'summary_large_image',
-		title: 'About Morteza Maddahi | Architectural Design',
-		description:
-			'Discover the story of Morteza Maddahi’s multidisciplinary journey and his commitment to real-world innovation.',
-		images: ['https://mortezamaddahi.com/images/morteza-og.jpg'],
-	},
-	alternates: {
-		canonical: 'https://mortezamaddahi.com/Contact',
-	},
-};
+export default function ContactForm() {
+	const [formData, setFormData] = useState({
+		name: '',
+		email: '',
+		subject: '',
+		message: '',
+	});
 
-export default function page() {
+	const [status, setStatus] = useState('');
+	const [loading, setLoading] = useState(false);
+	async function handleSubmit(e: React.FormEvent) {
+		e.preventDefault();
+		setStatus('Submitting...');
+		setLoading(true);
+
+		const res = await fetch('/api/contact', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(formData),
+		});
+
+		if (res.ok) {
+			setStatus('Message sent successfully!');
+			setFormData({ name: '', email: '', subject: '', message: '' });
+		} else {
+			setStatus('Failed to send message.');
+		}
+		setLoading(false);
+	}
+
 	return (
 		<div>
 			<section className='py-24 px-6 md:px-16 lg:px-24 bg-white'>
@@ -106,7 +103,108 @@ export default function page() {
 						</div>
 
 						<div>
-							<ContactForm />
+							<div>
+								<form
+									onSubmit={handleSubmit}
+									className='space-y-6'
+									name='contact'
+									id='contact-form'>
+									<div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
+										<div className='space-y-2'>
+											<label
+												htmlFor='name'
+												className='text-sm font-medium'>
+												Name
+											</label>
+											<Input
+												name='name'
+												value={formData.name}
+												onChange={(e) =>
+													setFormData({
+														...formData,
+														name: e.target.value,
+													})
+												}
+												placeholder='Name'
+												required
+												className='border-gray-300 focus:border-accent focus:ring-accent'
+											/>
+										</div>
+										<div className='space-y-2'>
+											<label
+												htmlFor='email'
+												className='text-sm font-medium'>
+												Email
+											</label>
+											<Input
+												name='email'
+												value={formData.email}
+												onChange={(e) =>
+													setFormData({
+														...formData,
+														email: e.target.value,
+													})
+												}
+												placeholder='Email'
+												type='email'
+												required
+												className='border-gray-300 focus:border-accent focus:ring-accent'
+											/>
+										</div>
+									</div>
+									<div className='space-y-2'>
+										<label
+											htmlFor='subject'
+											className='text-sm font-medium'>
+											Subject
+										</label>
+										<Input
+											name='subject'
+											value={formData.subject}
+											onChange={(e) =>
+												setFormData({
+													...formData,
+													subject: e.target.value,
+												})
+											}
+											placeholder='Subject'
+											required
+											className='border-gray-300 focus:border-accent focus:ring-accent'
+										/>
+									</div>
+									<div className='space-y-2'>
+										<label
+											htmlFor='message'
+											className='text-sm font-medium'>
+											Message
+										</label>
+										<Textarea
+											name='message'
+											value={formData.message}
+											onChange={(e) =>
+												setFormData({
+													...formData,
+													message: e.target.value,
+												})
+											}
+											placeholder='Message'
+											required
+											className='border-gray-300 focus:border-accent focus:ring-accent min-h-[150px]'
+										/>
+									</div>
+									<Button
+										className='bg-zinc-900 hover:bg-zinc-950 transition-colors text-white w-full py-6'
+										type='submit'
+										disabled={loading}>
+										{loading ? 'Submitting...' : 'Submit'}
+									</Button>
+									{status && (
+										<p className='text-center mt-2'>
+											{status}
+										</p>
+									)}
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
