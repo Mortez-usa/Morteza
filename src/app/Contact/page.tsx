@@ -37,6 +37,11 @@ export default function ContactForm() {
 		setLoading(false);
 	}
 
+	const capitalizeFirst = (str: string) => {
+		if (!str) return '';
+		return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+	};
+
 	return (
 		<div>
 			<section className='py-24 px-6 md:px-16 lg:px-24 bg-white'>
@@ -118,11 +123,16 @@ export default function ContactForm() {
 											</label>
 											<Input
 												name='name'
+												pattern='^[^0-9]+$'
+												minLength={2}
+												maxLength={50}
 												value={formData.name}
 												onChange={(e) =>
 													setFormData({
 														...formData,
-														name: e.target.value,
+														name: capitalizeFirst(
+															e.target.value
+														),
 													})
 												}
 												placeholder='Name'
@@ -164,11 +174,15 @@ export default function ContactForm() {
 											onChange={(e) =>
 												setFormData({
 													...formData,
-													subject: e.target.value,
+													subject:
+														capitalizeFirst(e.target
+															.value),
 												})
 											}
 											placeholder='Subject'
 											required
+											minLength={5}
+											maxLength={100}
 											className='border-gray-300 focus:border-accent focus:ring-accent'
 										/>
 									</div>
@@ -180,6 +194,8 @@ export default function ContactForm() {
 										</label>
 										<Textarea
 											name='message'
+											minLength={10}
+											maxLength={500}
 											value={formData.message}
 											onChange={(e) =>
 												setFormData({
