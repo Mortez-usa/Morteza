@@ -2,7 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import '../globals.css';
+import '../../globals.css';
 import { Button } from '@/components/ui/button';
 
 export default function page() {

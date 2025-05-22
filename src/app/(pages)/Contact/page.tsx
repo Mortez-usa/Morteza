@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Building, Mail, Video } from 'lucide-react';
+import '../../globals.css';
 import Link from 'next/link';
 
 export default function ContactForm() {
@@ -17,6 +18,7 @@ export default function ContactForm() {
 
 	const [status, setStatus] = useState('');
 	const [loading, setLoading] = useState(false);
+
 	async function handleSubmit(e: React.FormEvent) {
 		e.preventDefault();
 		setStatus('Submitting...');
@@ -30,9 +32,15 @@ export default function ContactForm() {
 
 		if (res.ok) {
 			setStatus('Message sent successfully!');
+			setTimeout(() => {
+				setStatus('');
+			}, 7000); // 7000 ms = 7 seconds
 			setFormData({ name: '', email: '', subject: '', message: '' });
 		} else {
-			setStatus('Failed to send message.');
+			setStatus('Failed to send message. try again later.');
+			setTimeout(() => {
+				setStatus('');
+			}, 25000); // 25000 ms = 25 seconds
 		}
 		setLoading(false);
 	}

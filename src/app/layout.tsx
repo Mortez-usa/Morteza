@@ -4,6 +4,25 @@ import { Analytics } from '@vercel/analytics/react';
 // import { UserProvider } from '@auth0/nextjs-auth0/client';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import {
+	ClerkProvider,
+	SignInButton,
+	SignUpButton,
+	SignedIn,
+	SignedOut,
+	UserButton,
+} from '@clerk/nextjs';
+import { Geist, Geist_Mono } from 'next/font/google';
+
+const geistSans = Geist({
+	variable: '--font-geist-sans',
+	subsets: ['latin'],
+});
+
+const geistMono = Geist_Mono({
+	variable: '--font-geist-mono',
+	subsets: ['latin'],
+});
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -13,20 +32,27 @@ const metadata: Metadata = {
 		" I have a soft spot for startups and a passion for bringing innovative ideas to life. I believe in building things that genuinely help people. Whether it's learning new technologies or understanding the ins and outs of business, I'm always open to new challenges and eager to pick up whatever skills are necessary. ",
 };
 
+const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
+
 export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang='en' className='scroll-smooth *:focus-visible:outline-none'>
-			<body className={inter.className}>
-				<SpeedInsights />
-				<main>{children}</main>
-				<div className='absolute bg-blue-800 bottom-0 w-full'></div>
-				<Analytics />
-				<SpeedInsights />
-			</body>
-		</html>
+		<ClerkProvider>
+			{' '}
+			<html
+				lang='en'
+				className='scroll-smooth *:focus-visible:outline-none'>
+				<body className={inter.className}>
+					<SpeedInsights />
+					<main>{children}</main>
+					<div className='absolute bg-blue-800 bottom-0 w-full'></div>
+					<Analytics />
+					<SpeedInsights />
+				</body>
+			</html>
+		</ClerkProvider>
 	);
 }

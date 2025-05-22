@@ -1,4 +1,8 @@
 import React from 'react';
+import Link from 'next/link';
+import { ClerkProvider, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+
+const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
 export default function Footer() {
 	const currentYear = new Date().getFullYear();
@@ -35,6 +39,20 @@ export default function Footer() {
 							<li>
 								<button className='text-gray-400 hover:text-white transition-colors'>
 									Contact
+								</button>
+							</li>
+							<li>
+								<button className='text-gray-400 hover:text-white transition-colors'>
+									<ClerkProvider
+										publishableKey={publishableKey}>
+										<div className='cursor-pointer'>
+											<SignedOut>
+												<Link href='/sign-in'>
+													Portal
+												</Link>
+											</SignedOut>
+										</div>
+									</ClerkProvider>
 								</button>
 							</li>
 						</ul>

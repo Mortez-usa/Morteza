@@ -34,11 +34,11 @@ export const metadata: Metadata = {
 
 
 import Hero from '../components/Hero/page';
-import Projects from './Projects/page';
-import About from './About/page';
-import Contact from './Contact/page';
+import Projects from './(pages)/Projects/page';
+import About from './(pages)/About/page';
+import Contact from './(pages)/Contact/page';
 import Footer from '../components/Footer/page';
-import Conceptdesign from './conceptdesign/page';
+import Conceptdesign from './(pages)/Conceptdesign/page';
 
 
 export default function Page() {
