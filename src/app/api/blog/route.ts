@@ -1,9 +1,3 @@
-import React from 'react'
-
-export default function route() {
-  return (
-	<div>
-	  
-	</div>
-  )
+export function GET() {
+	return new Response('Hello, Next.js!');
 }
