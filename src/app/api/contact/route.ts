@@ -3,7 +3,7 @@ import { supabase } from '@/lib/supabase/client';
 
 export async function POST(req: NextRequest) {
 	const data = await req.json();
-	const { name, email, subject, message } = data;
+	const { name, email, subject, message } = data; //supabase table columns
 
 	const { error } = await supabase
 		.from('messages')
