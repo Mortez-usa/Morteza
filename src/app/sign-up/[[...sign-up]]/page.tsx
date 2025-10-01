@@ -22,12 +22,6 @@ export default function SignUpPage() {
 		<div className='justify-center m-54'>
 			<div className='grid w-full grow items-center px-4 sm:justify-center'>
 				<div className='flex justify-center mb-4'>
-					<Image
-						src='/RedHatArchitects-w.jpg'
-						alt='Red Hat Architects'
-						width={100}
-						height={100}
-					/>
 				</div>
 				<HeroUIProvider>
 					<SignUp.Root>

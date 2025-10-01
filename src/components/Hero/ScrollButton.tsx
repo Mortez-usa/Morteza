@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import '../../app/globals.css';
+import Link from 'next/link';
 
 export default function ScrollButton() {
 	const handleScroll = () => {
@@ -14,10 +16,14 @@ export default function ScrollButton() {
 	};
 
 	return (
-		<Button
-			className='bg-white text-black hover:bg-white/90 transition-all duration-1000 text-base px-8 py-6'
-			onClick={handleScroll}>
-			Projects
-		</Button>
+		<>
+			<Link href='/clientquery'>
+				<Button
+					className='bg-white text-black hover:bg-white/90 transition-all duration-1000 text-base px-8 py-6'
+					onClick={handleScroll}>
+					Start your project
+				</Button>
+			</Link>
+		</>
 	);
 }

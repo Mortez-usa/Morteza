@@ -144,6 +144,7 @@ export default function SignInPage() {
 															submit
 															asChild>
 															<Button
+																className='bg-zinc-900 text-white hover:bg-zinc-950'
 																disabled={
 																	isGlobalLoading
 																}>
@@ -160,7 +161,6 @@ export default function SignInPage() {
 																</Clerk.Loading>
 															</Button>
 														</SignIn.Action>
-
 														<Button
 															variant='link'
 															size='sm'
@@ -405,6 +405,7 @@ export default function SignInPage() {
 																submit
 																asChild>
 																<Button
+																	className='bg-black'
 																	disabled={
 																		isGlobalLoading
 																	}>
@@ -435,6 +436,40 @@ export default function SignInPage() {
 													</CardFooter>
 												</Card>
 											</SignIn.Strategy>
+											<SignIn.Step name='forgot-password'>
+												<h1>Forgot your password?</h1>
+
+												<SignIn.SupportedStrategy name='reset_password_email_code'>
+													Reset password
+												</SignIn.SupportedStrategy>
+
+												<SignIn.Action navigate='previous'>
+													Go back
+												</SignIn.Action>
+											</SignIn.Step>
+											<SignIn.Step name='reset-password'>
+												<h1>Reset your password</h1>
+
+												<Clerk.Field name='password'>
+													<Clerk.Label>
+														New password
+													</Clerk.Label>
+													<Clerk.Input />
+													<Clerk.FieldError />
+												</Clerk.Field>
+
+												<Clerk.Field name='confirmPassword'>
+													<Clerk.Label>
+														Confirm password
+													</Clerk.Label>
+													<Clerk.Input />
+													<Clerk.FieldError />
+												</Clerk.Field>
+
+												<SignIn.Action submit>
+													Reset password
+												</SignIn.Action>
+											</SignIn.Step>
 										</SignIn.Step>
 									</>
 								)}
