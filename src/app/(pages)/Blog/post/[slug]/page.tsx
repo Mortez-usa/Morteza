@@ -8,7 +8,7 @@ type PageProps = {
 
 
 export default async function Posts({ params }: PageProps) {
-	const slug = params;
+	const slug = params?.slug ?? '';
 
 	// Try to fetch by explicit `slug` column first
 	let { data: postBySlug, error } = await supabase
