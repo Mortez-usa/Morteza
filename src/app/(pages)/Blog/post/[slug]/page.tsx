@@ -1,10 +1,9 @@
 'use server';
 import { supabase } from '@/lib/supabase/client';
-import { MDXRemote } from 'next-mdx-remote-client/rsc'
+// import ReactMarkdown from 'react-markdown';
+import BlogContent from '@/app/components/blog/BlogContent';
 
-
-
-export default async function Posts(props: any) {
+export default async function Gets(props: any) {
 	const params = (await props?.params) as { slug: string } | undefined;
 	const slug = params?.slug ?? '';
 
@@ -17,6 +16,8 @@ export default async function Posts(props: any) {
 		.single();
 
 	let post = postBySlug ?? null;
+
+	
 
 	if (!post) {
 		// Fallback: convert slug to a title-like string and search case-insensitively
@@ -42,7 +43,8 @@ export default async function Posts(props: any) {
 		);
 	}
 
-	const markdown = post.body ?? '';
+	
+	
 
 	return (
 		<main className='p-4 sm:p-6 md:p-8 lg:p-12 max-w-4xl mx-auto [hyphens:none] [word-break:normal] [overflow-wrap:normal] leading-relaxed text-left'>
@@ -53,15 +55,16 @@ export default async function Posts(props: any) {
 
 				<hr className='my-4 border-red-500 ' />
 
-				{/*{post.body ? (*/}
+				{/* {post.body ? (
 					<div className='mt-4 prose'>
-						{/*{post.body}*/}
-						<MDXRemote source={markdown} />
+						<ReactMarkdown>{post.body}</ReactMarkdown>
 					</div>
-				 {/*) : (
-				 	post.excerpt && <p className='mt-1'>{post.excerpt}</p>
-				 )}*/}
-
+				) : (
+					post.excerpt && <p className='mt-1'>{post.excerpt}</p>
+				)} */}
+				<div>
+					<BlogContent />
+				</div>
 				<div className='flex justify-between text-base sm:text-lg md:text-sm lg:text-sm py-2 text-gray-400'>
 					<div>
 						<p className='inline pr-1'>Date</p>
