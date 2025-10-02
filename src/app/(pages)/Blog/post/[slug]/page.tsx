@@ -1,8 +1,14 @@
 'use server';
 import { supabase } from '@/lib/supabase/client';
 
-export default async function Posts({ params }: { params: { slug: string } }) {
-	const slug = params?.slug ?? '';
+
+type PageProps = {
+	params: { slug: string };
+};
+
+
+export default async function Posts({ params }: PageProps) {
+	const slug = params;
 
 	// Try to fetch by explicit `slug` column first
 	let { data: postBySlug, error } = await supabase
