@@ -11,6 +11,9 @@ export default function page() {
 			<div className='absolute flex right-10 top-10 justify-end items-center  hover:underline z-50 '>
 				<ClerkProvider publishableKey={publishableKey}>
 					<div className='hover:underline cursor-pointer'>
+						<div className='text-white'>
+							<Link href='/Blog'>Blog</Link>
+						</div>
 						<SignedIn>
 							<UserButton showName />
 						</SignedIn>
