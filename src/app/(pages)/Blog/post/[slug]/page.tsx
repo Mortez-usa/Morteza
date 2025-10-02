@@ -1,7 +1,8 @@
 'use server';
 import { supabase } from '@/lib/supabase/client';
 
-export default async function Posts({ params }: { params: { slug: string } }) {
+export default async function Posts(props: any) {
+	const params = props?.params as { slug: string } | undefined;
 	const slug = params?.slug ?? '';
 
 	// Try to fetch by explicit `slug` column first
