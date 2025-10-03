@@ -55,9 +55,9 @@ export default function BlogPage() {
 										</p>
 									)}
 
-									{post.body ? (
+									{post.description ? (
 										<p className='mt-1'>
-											{post.body.slice(0, 200) + '...'}
+											{post.description + '...'}
 										</p>
 									) : (
 										post.excerpt && (

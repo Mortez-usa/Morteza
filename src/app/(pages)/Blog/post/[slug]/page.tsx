@@ -1,7 +1,7 @@
 'use server';
 import { supabase } from '@/lib/supabase/client';
-// import ReactMarkdown from 'react-markdown';
-import BlogContent from '@/app/components/blog/BlogContent';
+import ReactMarkdown from 'react-markdown';
+// import BlogContent from '@/app/components/blog/BlogContent';
 
 export default async function Gets(props: any) {
 	const params = (await props?.params) as { slug: string } | undefined;
@@ -55,16 +55,16 @@ export default async function Gets(props: any) {
 
 				<hr className='my-4 border-red-500 ' />
 
-				{/* {post.body ? (
+				{post.body ? (
 					<div className='mt-4 prose'>
 						<ReactMarkdown>{post.body}</ReactMarkdown>
 					</div>
 				) : (
 					post.excerpt && <p className='mt-1'>{post.excerpt}</p>
-				)} */}
-				<div>
+				)}
+				{/* <div>
 					<BlogContent />
-				</div>
+				</div> */}
 				<div className='flex justify-between text-base sm:text-lg md:text-sm lg:text-sm py-2 text-gray-400'>
 					<div>
 						<p className='inline pr-1'>Date</p>
