@@ -3,7 +3,7 @@ import * as Clerk from '@clerk/elements/common';
 import { Spinner } from '@heroui/react';
 import { HeroUIProvider } from '@heroui/react';
 import * as SignUp from '@clerk/elements/sign-up';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/app/components/ui/button';
 import {
 	Card,
 	CardContent,
@@ -11,9 +11,9 @@ import {
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
+} from '@/app/components/ui/card';
+import { Input } from '@/app/components/ui/input';
+import { Label } from '@/app/components/ui/label';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 
@@ -21,8 +21,7 @@ export default function SignUpPage() {
 	return (
 		<div className='justify-center m-54'>
 			<div className='grid w-full grow items-center px-4 sm:justify-center'>
-				<div className='flex justify-center mb-4'>
-				</div>
+				<div className='flex justify-center mb-4'></div>
 				<HeroUIProvider>
 					<SignUp.Root>
 						<Clerk.Loading>

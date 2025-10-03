@@ -6,7 +6,6 @@ export default function page() {
 	return (
 		<>
 			<header>
-				<Nav/>
 			</header>
 			<section className='relative h-screen w-full overflow-hidden'>
 				{/* Hero Background Video - Full bleed with no gaps */}

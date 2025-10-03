@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import '../../globals.css';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/app/components/ui/button';
 
 export default function page() {
 	return (
@@ -26,7 +26,7 @@ export default function page() {
 								<Link href='https://calendar.app.google/21J71BqZe7sbNKMB8'>
 									<div className='mt-12 flex justify-center'>
 										<Button className='rounded-lg bg-white border border-black text-black hover:bg-black hover:text-white transition-all duration-300 text-base px-8 py-6'>
-												Free Consultation
+											Free Consultation
 										</Button>
 									</div>
 								</Link>

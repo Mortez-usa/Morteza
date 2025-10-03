@@ -3,8 +3,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import '../../globals.css';
-import { Button } from '@/components/ui/button';
-
+import { Button } from '@/app/components/ui/button';
 
 // app/about/page.tsx
 export const metadata: Metadata = {
@@ -37,10 +36,8 @@ export const metadata: Metadata = {
 	},
 };
 
-
 export default function page() {
 	return (
-		
 		<div>
 			<section className='py-24 px-6 md:px-16 lg:px-24 bg-gray-50'>
 				<div className='max-w-7xl mx-auto'>

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { AspectRatio } from '@/components/ui/aspect-ratio';
-import { CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent } from '@/app/components/ui/card';
+import { AspectRatio } from '@/app/components/ui/aspect-ratio';
+import { CardTitle, CardDescription } from '@/app/components/ui/card';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
-import { CardFooter } from '@/components/ui/card';
+import { Button } from '@/app/components/ui/button';
+import { CardFooter } from '@/app/components/ui/card';
 
 interface Project {
 	id: number;

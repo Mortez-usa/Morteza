@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import '../../app/globals.css';
+import { Button } from '@/app/components/ui/button';
+import '/src/app/globals.css';
 import Link from 'next/link';
 
 export default function ScrollButton() {

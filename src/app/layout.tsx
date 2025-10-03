@@ -13,6 +13,7 @@ import {
 	UserButton,
 } from '@clerk/nextjs';
 import { Geist, Geist_Mono } from 'next/font/google';
+import NavWrapper from './components/Navigation/NavWrapper';
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -25,6 +26,7 @@ const geistMono = Geist_Mono({
 });
 
 const inter = Inter({ subsets: ['latin'] });
+
 
 const metadata: Metadata = {
 	title: 'Morteza Maddahi',
@@ -39,6 +41,7 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
+
 	return (
 		<ClerkProvider>
 			{' '}
@@ -47,7 +50,10 @@ export default function RootLayout({
 				className='scroll-smooth *:focus-visible:outline-none'>
 				<body className={inter.className}>
 					<SpeedInsights />
-					<main>{children}</main>
+					<main>
+						<NavWrapper />
+						{children}
+					</main>
 					<div className='absolute bg-blue-800 bottom-0 w-full'></div>
 					<Analytics />
 					<SpeedInsights />

@@ -10,13 +10,20 @@ import {
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from '@/components/ui/card';
+} from '@/app/components/ui/card';
 
 export const metadata: Metadata = {
 	title: 'Shaping Space with Purpose: Architectural Thinking by Morteza Maddahi',
 	description:
 		'Crafting innovative architectural solutions where form meets function. Explore my portfolio',
-	keywords: ['architect', 'architectural design', 'BIM', 'projects', 'about', 'bellevue, wa'],
+	keywords: [
+		'architect',
+		'architectural design',
+		'BIM',
+		'projects',
+		'about',
+		'bellevue, wa',
+	],
 	authors: [{ name: 'Morteza Maddahi' }],
 	creator: 'Morteza Maddahi',
 	viewport: {
@@ -32,23 +39,21 @@ export const metadata: Metadata = {
 	},
 };
 
-
-import Hero from '../components/Hero/page';
+import Hero from './components/Hero/page';
 import Projects from './(pages)/Projects/page';
 import About from './(pages)/About/page';
 import Contact from './(pages)/Contact/page';
-import Footer from '../components/Footer/page';
+import Footer from './components/Footer/page';
 import Conceptdesign from './(pages)/Conceptdesign/page';
-
 
 export default function Page() {
 	return (
 		<>
 			<div className='flex flex-col min-h-screen'>
-				<div className="flex-grow">
+				<div className='flex-grow'>
 					<Hero />
 					<Projects />
-					<Conceptdesign/>
+					<Conceptdesign />
 					<About />
 					<Contact />
 				</div>
