@@ -25,15 +25,15 @@ export default function Page() {
 	return (
 		<div>
 			<ClerkProvider publishableKey={publishableKey}>
-				<div className='flex justify-between bg-gray-200 h-36 z-50'>
-					<div className='flex mt-4 ml-10 text-gray-600'>
-						<div className='p-2 font-bold text-2xl'>
+				<div className='flex justify-between bg-zinc-950 h-36 z-50'>
+					<div className='flex mt-4 ml-10 text-zinc-200'>
+						<div className='p-2 font-serif text-3xl'>
 							<Link href='/'>Morteza Maddahi</Link>
 						</div>
 					</div>
-					<div className='flex justify-end items-start '>
+					<div className='flex justify-end items-start font-serif'>
 						<div className='flex mt-4 mr-10 cursor-pointer'>
-							<div className='p-2 text-gray-600 hover:underline hover:text-blue-600'>
+							<div className='p-2 text-zinc-200 hover:underline hover:text-blue-600'>
 								<Link href='/Blog'>Blog</Link>
 							</div>
 							<SignedIn>

@@ -1,9 +1,10 @@
-'use client';
+'use client'
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Button } from '@/app/components/ui/button';
-import { Input } from '@/app/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+
 
 export default function About() {
 	return (
@@ -41,4 +42,4 @@ export default function About() {
 			</div>
 		</div>
 	);
-}
+};

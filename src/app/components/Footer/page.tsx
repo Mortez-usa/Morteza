@@ -1,14 +1,21 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
 import { ClerkProvider, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import { usePathname } from 'next/navigation';
 
 const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
 export default function Footer() {
 	const currentYear = new Date().getFullYear();
+	const pathname = usePathname();
+
+	// Don't render Nav on homepage
+	if (pathname === '/')
 
 	return (
-		<footer className='py-12 px-6 md:px-16 lg:px-24 bg-zinc-950 text-white'>
+		<footer className=' py-12 px-6 md:px-16 lg:px-24 bg-zinc-950 text-white bottom-0 w-full '>
 			<div className='max-w-7xl mx-auto'>
 				<div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
 					<div className='md:col-span-2'>

@@ -27,7 +27,6 @@ export default function BlogPage() {
 
 	return (
 		<main className='prose mx-auto p-6'>
-			<h1>Blog</h1>
 			{loading ? (
 				<p>Loading posts…</p>
 			) : posts.length === 0 ? (

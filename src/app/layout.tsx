@@ -14,7 +14,8 @@ import {
 } from '@clerk/nextjs';
 import { Geist, Geist_Mono } from 'next/font/google';
 import NavWrapper from './components/Navigation/NavWrapper';
-
+import Footer from './components/Footer/page';
+import FooterWapper from './components/Footer/FooterWrapper';
 const geistSans = Geist({
 	variable: '--font-geist-sans',
 	subsets: ['latin'],
@@ -54,7 +55,8 @@ export default function RootLayout({
 						<NavWrapper />
 						{children}
 					</main>
-					<div className='absolute bg-blue-800 bottom-0 w-full'></div>
+					<Footer />
+					<FooterWapper />
 					<Analytics />
 					<SpeedInsights />
 				</body>

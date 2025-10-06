@@ -57,7 +57,6 @@ export default function Page() {
 					<About />
 					<Contact />
 				</div>
-				<Footer />
 			</div>
 		</>
 	);
