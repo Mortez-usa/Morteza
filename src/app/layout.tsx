@@ -28,7 +28,6 @@ const geistMono = Geist_Mono({
 
 const inter = Inter({ subsets: ['latin'] });
 
-
 const metadata: Metadata = {
 	title: 'Morteza Maddahi',
 	description:
@@ -42,7 +41,6 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-
 	return (
 		<ClerkProvider>
 			{' '}
@@ -51,12 +49,15 @@ export default function RootLayout({
 				className='scroll-smooth *:focus-visible:outline-none'>
 				<body className={inter.className}>
 					<SpeedInsights />
-					<main>
+					<main className=''>
 						<NavWrapper />
 						{children}
 					</main>
-					<Footer />
-					<FooterWapper />
+					<div className='min-h-[0vh] flex flex-col'>
+						<Footer />
+						<FooterWapper />
+					</div>
+
 					<Analytics />
 					<SpeedInsights />
 				</body>

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import '/src/app/globals.css';
 import { ClerkProvider, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import { usePathname } from 'next/navigation';
-
+import NavBar from './Navbar';
 const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
 const navLinks = [
@@ -20,7 +20,7 @@ const navLinks = [
 export default function Page() {
 	const pathname = usePathname();
 
-	if (pathname === '/sign-in') return null;
+	if (pathname !== '/') return <NavBar />;
 
 	return (
 		<div>

@@ -3,6 +3,11 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
 import './globals.css';
+import Hero from './components/Hero/page';
+import Projects from './(pages)/Projects/page';
+import About from './(pages)/About/page';
+import Contact from './(pages)/Contact/page';
+import Conceptdesign from './(pages)/Conceptdesign/page';
 import {
 	Card,
 	CardContent,
@@ -39,12 +44,7 @@ export const metadata: Metadata = {
 	},
 };
 
-import Hero from './components/Hero/page';
-import Projects from './(pages)/Projects/page';
-import About from './(pages)/About/page';
-import Contact from './(pages)/Contact/page';
-import Footer from './components/Footer/page';
-import Conceptdesign from './(pages)/Conceptdesign/page';
+
 
 export default function Page() {
 	return (
