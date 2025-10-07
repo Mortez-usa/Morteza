@@ -26,7 +26,7 @@ export default function BlogPage() {
 	}, []);
 
 	return (
-		<main className='prose mx-auto p-6'>
+		<main className='p-4 sm:p-6 md:p-8 lg:p-12 max-w-4xl mx-auto [hyphens:none] [word-break:normal] [overflow-wrap:normal] leading-relaxed text-left'>
 			{loading ? (
 				<p>Loading posts…</p>
 			) : posts.length === 0 ? (

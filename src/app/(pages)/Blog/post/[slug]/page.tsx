@@ -49,7 +49,7 @@ export default async function Gets(props: any) {
 	return (
 		<main className='p-4 sm:p-6 md:p-8 lg:p-12 max-w-4xl mx-auto [hyphens:none] [word-break:normal] [overflow-wrap:normal] leading-relaxed text-left'>
 			<article>
-				<h1 className='text-xl sm:text-2xl md:text-3xl lg:text-4xl'>
+				<h1 className='mt-8 text-xl sm:text-2xl md:text-3xl lg:text-4xl'>
 					{post.title ?? 'Untitled'}
 				</h1>
 
@@ -65,7 +65,7 @@ export default async function Gets(props: any) {
 				{/* <div>
 					<BlogContent />
 				</div> */}
-				<div className='flex justify-between text-base sm:text-lg md:text-sm lg:text-sm py-2 text-gray-400'>
+				<div className='flex mb-56 justify-between text-base sm:text-lg md:text-sm lg:text-sm py-2 text-gray-400'>
 					<div>
 						<p className='inline pr-1'>Date</p>
 						{post.created_at && (
