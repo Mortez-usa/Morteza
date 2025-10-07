@@ -18,7 +18,7 @@ export default function BlogPage() {
 	const [posts, setPosts] = useState<any[]>([]);
 	const [loading, setLoading] = useState(true);
 	const [selectedGroup, setSelectedGroup] = useState('All');
-	const groups = [...new Set(posts.map((p) => p.group))]; // unique groups
+	const groups = Array.from(new Set(posts.map((p) => p.group))); // unique groups
 
 	useEffect(() => {
 		fetch('/api/blog')
