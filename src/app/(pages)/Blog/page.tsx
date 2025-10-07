@@ -85,8 +85,8 @@ export default function BlogPage() {
 												<Image
 													src={post.image}
 													alt='Red Hat Architects'
-													width={200}
-													height={200}
+													width={300}
+													height={300}
 													className='object-cover mb-4 inline'
 													loading='lazy'
 													placeholder='blur'
