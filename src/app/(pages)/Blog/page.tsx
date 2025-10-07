@@ -33,7 +33,6 @@ export default function BlogPage() {
 			? posts
 			: posts.filter((post) => post.group === selectedGroup);
 
-	
 	const groupCounts = posts.reduce((acc, post) => {
 		acc[post.group] = (acc[post.group] || 0) + 1;
 		return acc;
@@ -79,54 +78,50 @@ export default function BlogPage() {
 								? post.slug
 								: slugify(post.title);
 							return (
-								<div>
-									<li key={post.id}>
-										<article className='text-zinc-700'>
-											<Link href={`/Blog/post/${slug}`}>
-												<div>
-													<Image
-														src={post.image}
-														alt='Red Hat Architects'
-														width={200}
-														height={200}
-														className='object-cover mb-4 inline'
-														loading='lazy'
-														placeholder='blur'
-														blurDataURL='/PORTFOLIO.jpg'
-														quality={100}
-													/>
-													<h2 className='text-xl font-semibold hover:underline'>
-														{post.title ??
-															'Untitled'}
-													</h2>
-												</div>
-											</Link>
-											<div className=''>
-												{post.created_at && (
-													<p className='text-sm text-muted-foreground text-gray-500'>
-														{new Date(
-															post.created_at
-														).toLocaleDateString()}
-													</p>
-												)}
-
-												{post.description ? (
-													<p className='mt-1'>
-														{post.description +
-															'...'}
-													</p>
-												) : (
-													post.excerpt && (
-														<p className='mt-1'>
-															{post.excerpt}
-														</p>
-													)
-												)}
+								<li key={post.id}>
+									<article className='text-zinc-700'>
+										<Link href={`/Blog/post/${slug}`}>
+											<div>
+												<Image
+													src={post.image}
+													alt='Red Hat Architects'
+													width={200}
+													height={200}
+													className='object-cover mb-4 inline'
+													loading='lazy'
+													placeholder='blur'
+													blurDataURL='/PORTFOLIO.jpg'
+													quality={100}
+												/>
+												<h2 className='text-xl font-semibold hover:underline'>
+													{post.title ?? 'Untitled'}
+												</h2>
 											</div>
-										</article>
-										<hr className='my-4 border-slate-300' />
-									</li>
-								</div>
+										</Link>
+										<div className=''>
+											{post.created_at && (
+												<p className='text-sm text-muted-foreground text-gray-500'>
+													{new Date(
+														post.created_at
+													).toLocaleDateString()}
+												</p>
+											)}
+
+											{post.description ? (
+												<p className='mt-1'>
+													{post.description + '...'}
+												</p>
+											) : (
+												post.excerpt && (
+													<p className='mt-1'>
+														{post.excerpt}
+													</p>
+												)
+											)}
+										</div>
+									</article>
+									<hr className='my-4 border-slate-300' />
+								</li>
 							);
 						})}
 					</ul>
