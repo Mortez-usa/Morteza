@@ -4,7 +4,6 @@ import { AspectRatio } from '@/app/components/ui/aspect-ratio';
 import { CardTitle, CardDescription } from '@/app/components/ui/card';
 import Image from 'next/image';
 import { Button } from '@/app/components/ui/button';
-import { CardFooter } from '@/app/components/ui/card';
 
 interface Project {
 	id: number;

@@ -24,7 +24,7 @@ export default function NavWrapper() {
 	if (pathname === '/')
 		return (
 			<div>
-				<div className='absolute flex right-10 top-10 font-serif justify-end items-center z-50 '>
+				<div className='absolute flex right-10 top-10 justify-end items-center z-50 '>
 					<ClerkProvider publishableKey={publishableKey}>
 						<div className='flex  cursor-pointer'>
 							<div className='p-2'>

@@ -17,13 +17,13 @@ export default function ScrollButton() {
 
 	return (
 		<>
-			<Link href='/clientquery'>
+			{/* <Link href='/'> */}
 				<Button
 					className='bg-white text-black hover:bg-white/90 transition-all duration-1000 text-base px-8 py-6'
 					onClick={handleScroll}>
 					Start your project
 				</Button>
-			</Link>
+			{/* </Link> */}
 		</>
 	);
 }
