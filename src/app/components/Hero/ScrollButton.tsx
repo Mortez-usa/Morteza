@@ -21,7 +21,7 @@ export default function ScrollButton() {
 				<Button
 					className='bg-white text-black hover:bg-white/90 transition-all duration-1000 text-base px-8 py-6'
 					onClick={handleScroll}>
-					Start your project
+					Selected Projects
 				</Button>
 			{/* </Link> */}
 		</>
