@@ -47,12 +47,13 @@ export default function page() {
 								About me
 							</h1>
 							{/* <div className='w-24 h-1 bg-accent mb-8'></div> */}
-							<p className='text-lg mb-6 leading-relaxed'>
+							<div>
+								<p className='text-lg mb-6 leading-relaxed '>
 								Hi, I’m Morteza—an architect with a deep
 								interest in technology, AI, and the future of
 								the built environment.
 							</p>
-							<p className='text-lg mb-6 leading-relaxed'>
+							<p className='text-lg mb-6 leading-relaxed '>
 								Over the past few years, I’ve worked at the
 								intersection of architecture, software, and real
 								estate development, driven by a belief that
@@ -82,6 +83,8 @@ export default function page() {
 								architecture, business, and tech meet, I’d love
 								to connect.
 							</p>
+							</div>
+							
 							<Link href='/PassionProjects'>
 								<div className='mt-12 flex justify-center'>
 									<Button className='bg-white border border-black text-black hover:bg-black hover:text-white transition-all duration-300 text-base px-8 py-6'>

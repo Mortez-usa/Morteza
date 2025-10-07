@@ -65,7 +65,7 @@ export default async function Gets(props: any) {
 				{/* <div>
 					<BlogContent />
 				</div> */}
-				<div className='flex mb-56 justify-between text-base sm:text-lg md:text-sm lg:text-sm py-2 text-gray-400'>
+				<div className='flex mb-56 justify-between text-base sm:text-lg md:text-sm lg:text-sm py-2 text-gray-400 mt-16'>
 					<div>
 						<p className='inline pr-1'>Date</p>
 						{post.created_at && (
