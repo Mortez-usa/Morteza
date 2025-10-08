@@ -42,12 +42,17 @@ export default function Footer() {
 							</li>
 							<li>
 								<button className='text-gray-400 hover:text-amber-500 transition-colors'>
-									About
+									<Link href={`/About`}>About</Link>
 								</button>
 							</li>
 							<li>
 								<button className='text-gray-400 hover:text-amber-500 transition-colors'>
-									Contact
+									<Link href={`/Blog`}>Blog</Link>
+								</button>
+							</li>
+							<li>
+								<button className='text-gray-400 hover:text-amber-500 transition-colors'>
+									<Link href={`/Contact`}>Contact</Link>
 								</button>
 							</li>
 							<li>
