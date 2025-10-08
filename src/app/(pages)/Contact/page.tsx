@@ -57,7 +57,7 @@ export default function ContactForm() {
 					<div className='grid grid-cols-1 lg:grid-cols-2 gap-16'>
 						<div>
 							<h2 className='font-serif text-3xl md:text-4xl mb-4'>
-								Contact Us
+								Contact
 							</h2>
 							<div className='w-24 h-1 bg-accent mb-8'></div>
 							<p className='text-lg mb-8 leading-relaxed'>
@@ -73,7 +73,7 @@ export default function ContactForm() {
 										<h3 className='font-medium text-lg'>
 											Address
 										</h3>
-										<p className='text-gray-600 *:hover:underline'>
+										<p className='text-gray-600 *:hover:underline hover:text-amber-500'>
 											<Link href='https://maps.app.goo.gl/gZU7MHVytXBpCNba7'>
 												Bellevue,
 												<br />
@@ -89,7 +89,7 @@ export default function ContactForm() {
 										<h3 className='font-medium text-lg'>
 											Email
 										</h3>
-										<p className='text-gray-600 *:hover:underline'>
+										<p className='text-gray-600 *:hover:underline hover:text-amber-500'>
 											<Link href='mailto:contact@mortezamaddahi.com'>
 												contact@mortezamaddahi.com
 											</Link>
@@ -103,7 +103,7 @@ export default function ContactForm() {
 										<h3 className='font-medium text-lg'>
 											Let&apos;s Meet
 										</h3>
-										<p className='text-gray-600 *:hover:underline'>
+										<p className='text-gray-600 *:hover:underline hover:text-amber-500'>
 											<Link
 												href='https://calendar.app.google/21J71BqZe7sbNKMB8'
 												target='_blank'>

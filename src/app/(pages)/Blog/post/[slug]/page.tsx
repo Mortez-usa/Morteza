@@ -70,7 +70,11 @@ export default async function Gets(props: any) {
 						<p className='inline pr-1'>Date</p>
 						{post.created_at && (
 							<p className='inline pr-1'>
-								{new Date(post.created_at).toLocaleDateString()}
+								{new Date(post.created_at).toLocaleDateString('en-US', {
+									year: 'numeric',
+									month: 'short',
+									day: '2-digit',
+								})}
 							</p>
 						)}
 						<div>

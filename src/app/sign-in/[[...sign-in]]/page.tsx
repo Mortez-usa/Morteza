@@ -27,7 +27,7 @@ export default function SignInPage() {
 				</Link>
 			</div>
 			<div className='justify-center m-54'>
-				<div className='grid w-full grow items-center justify-center place-content-center px-4 sm:justify-center '>
+				<div className='grid w-full grow items-center justify-center place-content-center px-4 sm:justify-center mb-96 mt-36'>
 					<HeroUIProvider>
 						<SignIn.Root>
 							<Clerk.Loading>

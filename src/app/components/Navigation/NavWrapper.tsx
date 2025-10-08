@@ -26,16 +26,18 @@ export default function NavWrapper() {
 			<div>
 				<div className='absolute flex right-10 top-10 justify-end items-center z-50 '>
 					<ClerkProvider publishableKey={publishableKey}>
-						<div className='flex  cursor-pointer'>
-							<div className='p-2'>
+						<div className='flex  cursor-pointer '>
+							<div className='p-2 hover:text-amber-500'>
 								<Link href='/Blog'>Blog</Link>
 							</div>
-							<SignedOut>
-								<SignInButton />
-							</SignedOut>
-							<SignedIn>
-								<UserButton showName />
-							</SignedIn>
+							<div className='p-2 hover:text-amber-500'>
+								<SignedOut>
+									<SignInButton />
+								</SignedOut>
+								<SignedIn>
+									<UserButton showName />
+								</SignedIn>
+							</div>
 						</div>
 					</ClerkProvider>
 				</div>

@@ -12,15 +12,15 @@ export default function Footer() {
 	const pathname = usePathname();
 
 	// Don't render Nav on homepage
-	if (pathname != '/')
+	if (pathname === '/sign-in' || pathname === '/sign-up') return null;
 		return (
 			<div className=''>
 				<footer className='py-12 px-6 md:px-16 lg:px-24 bg-zinc-950 text-white w-full '>
 					<div className='max-w-7xl mx-auto'>
 						<div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
 							<div className='md:col-span-2'>
-								<h2 className='font-serif text-2xl mb-4'>
-									Morteza Maddahi
+								<h2 className='font-serif text-2xl mb-4 text-gray-400 hover:text-amber-500 transition-colors cursor-pointer'>
+									<Link href={`/`}>Morteza Maddahi</Link>
 								</h2>
 								<p className='text-gray-400 max-w-md'>
 									Creating thoughtful, sustainable
@@ -35,25 +35,25 @@ export default function Footer() {
 								</h3>
 								<ul className='space-y-2'>
 									<li>
-										<button className='text-gray-400 hover:text-white transition-colors'>
+										<button className='text-gray-400 hover:text-amber-500 transition-colors'>
 											Projects
 										</button>
 									</li>
 									<li>
-										<button className='text-gray-400 hover:text-white transition-colors'>
+										<button className='text-gray-400 hover:text-amber-500 transition-colors'>
 											About
 										</button>
 									</li>
 									<li>
-										<button className='text-gray-400 hover:text-white transition-colors'>
+										<button className='text-gray-400 hover:text-amber-500 transition-colors'>
 											Contact
 										</button>
 									</li>
 									<li>
-										<button className='text-gray-400 hover:text-white transition-colors'>
+										<button className='text-gray-400 hover:text-amber-500 transition-colors'>
 											<ClerkProvider
 												publishableKey={publishableKey}>
-												<div className='cursor-pointer'>
+												<div className='cursor-pointer hover:text-amber-500 '>
 													<SignedOut>
 														<Link href='/sign-in'>
 															Portal

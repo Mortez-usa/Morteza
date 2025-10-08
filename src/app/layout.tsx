@@ -46,16 +46,16 @@ export default function RootLayout({
 			{' '}
 			<html
 				lang='en'
-				className='scroll-smooth *:focus-visible:outline-none'>
-				<body className={inter.className}>
+				className='scroll-smooth *:focus-visible:outline-none '>
+				<body
+					className={(inter.className, 'min-h-screen flex flex-col')}>
 					<SpeedInsights />
-					<main className=''>
+					<main className='flex-1'>
 						<NavWrapper />
 						{children}
 					</main>
 					<div className='min-h-[0vh] flex flex-col'>
 						<Footer />
-						<FooterWapper />
 					</div>
 
 					<Analytics />

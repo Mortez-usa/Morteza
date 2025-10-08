@@ -11,16 +11,18 @@ export default function Footer() {
 	const currentYear = new Date().getFullYear();
 	const pathname = usePathname();
 
+
+
 	// Don't render Nav on homepage
-	if (pathname === '/')
+	if (pathname === '/sign-in' || pathname === '/sign-up') return null;
 
 	return (
 		<footer className=' py-12 px-6 md:px-16 lg:px-24 bg-zinc-950 text-white bottom-0 w-full '>
 			<div className='max-w-7xl mx-auto'>
 				<div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
 					<div className='md:col-span-2'>
-						<h2 className='font-serif text-2xl mb-4'>
-							Morteza Maddahi
+						<h2 className='font-serif text-2xl mb-4 text-gray-400 hover:text-amber-500 transition-colors'>
+							<Link href={`/`}>Morteza Maddahi</Link>
 						</h2>
 						<p className='text-gray-400 max-w-md'>
 							Creating thoughtful, sustainable architecture that
@@ -34,22 +36,22 @@ export default function Footer() {
 						</h3>
 						<ul className='space-y-2'>
 							<li>
-								<button className='text-gray-400 hover:text-white transition-colors'>
+								<button className='text-gray-400 hover:text-amber-500 transition-colors'>
 									Projects
 								</button>
 							</li>
 							<li>
-								<button className='text-gray-400 hover:text-white transition-colors'>
+								<button className='text-gray-400 hover:text-amber-500 transition-colors'>
 									About
 								</button>
 							</li>
 							<li>
-								<button className='text-gray-400 hover:text-white transition-colors'>
+								<button className='text-gray-400 hover:text-amber-500 transition-colors'>
 									Contact
 								</button>
 							</li>
 							<li>
-								<button className='text-gray-400 hover:text-white transition-colors'>
+								<button className='text-gray-400 hover:text-amber-500transition-colors'>
 									<ClerkProvider
 										publishableKey={publishableKey}>
 										<div className='cursor-pointer'>
@@ -71,7 +73,7 @@ export default function Footer() {
 							<a
 								// facebook
 								href='https://www.facebook.com/mortezaauss/'
-								className='text-gray-400 hover:text-white transition-colors'>
+								className='text-gray-400 hover:text-amber-500 transition-colors'>
 								<svg
 									className='w-6 h-6'
 									fill='currentColor'
@@ -87,7 +89,7 @@ export default function Footer() {
 							<a
 								// instagram
 								href='https://www.instagram.com/mortezaauss/'
-								className='text-gray-400 hover:text-white transition-colors'>
+								className='text-gray-400 hover:text-amber-500 transition-colors'>
 								<svg
 									className='w-6 h-6'
 									fill='currentColor'
@@ -104,7 +106,7 @@ export default function Footer() {
 								// twitter
 								href='https://x.com/MortezaMaddahi'
 								target='_blank'
-								className='text-gray-400 hover:text-white transition-colors'>
+								className='text-gray-400 hover:text-amber-500 hover:text-amber-500transition-colors'>
 								<svg
 									className='w-6 h-6'
 									fill='currentColor'

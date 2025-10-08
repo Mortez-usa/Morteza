@@ -23,10 +23,19 @@ export default function BlogPage() {
 	useEffect(() => {
 		fetch('/api/blog')
 			.then((r) => r.json())
-			.then(({ data }) => setPosts(data ?? []))
+			.then(({ data }) => {
+				// Sort posts by created_at descending
+				const sorted = (data ?? []).sort(
+					(a: any, b: any) =>
+						new Date(b.created_at).getTime() -
+						new Date(a.created_at).getTime()
+				);
+				setPosts(sorted);
+			})
 			.catch(() => setPosts([]))
 			.finally(() => setLoading(false));
 	}, []);
+
 
 	const filteredPosts =
 		selectedGroup === 'All'
@@ -43,7 +52,7 @@ export default function BlogPage() {
 			<main className='p-4 sm:p-6 md:p-8 lg:p-12 max-w-4xl mx-auto [hyphens:none] [word-break:normal] [overflow-wrap:normal] leading-relaxed text-left'>
 				<div className='p-4'>
 					{/* Filter buttons */}
-					<div className='flex flex-col mb-2 text-zinc-600'>
+					<div className='flex mb-24 text-zinc-600 text-sm'>
 						<button
 							onClick={() => setSelectedGroup('All')}
 							className={`text-right px-3 rounded ${
@@ -87,13 +96,13 @@ export default function BlogPage() {
 													alt='Red Hat Architects'
 													width={300}
 													height={300}
-													className='object-cover mb-4 inline'
+													className='hover:opacity-90 object-cover mb-4 inline'
 													loading='lazy'
 													placeholder='blur'
 													blurDataURL='/PORTFOLIO.jpg'
 													quality={100}
 												/>
-												<h2 className='text-xl font-semibold hover:underline'>
+												<h2 className='text-xl font-semibold hover:underline hover:text-amber-500'>
 													{post.title ?? 'Untitled'}
 												</h2>
 											</div>
@@ -103,12 +112,16 @@ export default function BlogPage() {
 												<p className='text-sm text-muted-foreground text-gray-500'>
 													{new Date(
 														post.created_at
-													).toLocaleDateString()}
+													).toLocaleDateString('en-US', {
+														year: 'numeric',
+														month: 'short',
+														day: '2-digit',
+													})}
 												</p>
 											)}
 
 											{post.description ? (
-												<p className='mt-1'>
+												<p className='mt-3'>
 													{post.description + '...'}
 												</p>
 											) : (

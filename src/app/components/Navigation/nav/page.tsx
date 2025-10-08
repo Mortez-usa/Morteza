@@ -33,7 +33,7 @@ export default function Page() {
 					</div>
 					<div className='flex justify-end items-start font-serif'>
 						<div className='flex mt-4 mr-10 cursor-pointer'>
-							<div className='p-2 text-zinc-200 hover:underline hover:text-blue-600'>
+							<div className='p-2 text-zinc-200 hover:underline hover:text-amber-500'>
 								<Link href='/Blog'>Blog</Link>
 							</div>
 							<SignedIn>
