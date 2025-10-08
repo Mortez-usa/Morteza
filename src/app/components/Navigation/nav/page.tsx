@@ -6,6 +6,9 @@ import '/src/app/globals.css';
 import { ClerkProvider, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import { usePathname } from 'next/navigation';
 import NavBar from './Navbar';
+import { useState } from 'react';
+import '/src/app/globals.css';
+import SearchBox from '../../SearchBox';
 const publishableKey = process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
 const navLinks = [
@@ -19,30 +22,22 @@ const navLinks = [
 
 export default function Page() {
 	const pathname = usePathname();
+	const [isOpen, setIsOpen] = useState(false);
 
-	if (pathname !== '/') return <NavBar />;
-
-	return (
-		<div>
-			<ClerkProvider publishableKey={publishableKey}>
-				<div className='flex justify-between bg-zinc-950 h-36 z-50'>
-					<div className='flex mt-4 ml-10 text-zinc-200'>
-						<div className='p-2 font-serif text-3xl'>
-							<Link href='/'>Morteza Maddahi</Link>
-						</div>
-					</div>
-					<div className='flex justify-end items-start font-serif'>
-						<div className='flex mt-4 mr-10 cursor-pointer'>
-							<div className='p-2 text-zinc-200 hover:underline hover:text-amber-500'>
-								<Link href='/Blog'>Blog</Link>
-							</div>
-							<SignedIn>
-								<UserButton showName />
-							</SignedIn>
-						</div>
+	if (pathname !== '/' )
+		return (
+			<div className='flex justify-between bg-zinc-950 h-36 z-50 '>
+				<div className='flex mt-4 ml-10 text-gray-400'>
+					<div className='p-2 font-serif text-3xl hover:text-amber-500 transition-colors'>
+						<Link href='/'>Morteza Maddahi</Link>
 					</div>
 				</div>
-			</ClerkProvider>
-		</div>
-	);
+				<div className='flex justify-end items-start font-serif'>
+					<div className='text-gray-400 p-2 mt-4'>
+						<Link href='/Blog'>Blog</Link>
+					</div>
+					<SearchBox />
+				</div>
+			</div>
+		);
 }
