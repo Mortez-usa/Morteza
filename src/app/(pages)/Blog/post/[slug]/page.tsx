@@ -2,7 +2,7 @@
 import { supabase } from '@/lib/supabase/client';
 import ReactMarkdown from 'react-markdown';
 // import BlogContent from '@/app/components/blog/BlogContent';
-// import SubscribeCard from '../../../../components/SubscribeCard/page';
+// import SubscribeCard from '../../../../components/SubscribeCard/page'; //
 
 export default async function Gets(props: any) {
 	const params = (await props?.params) as { slug: string } | undefined;
