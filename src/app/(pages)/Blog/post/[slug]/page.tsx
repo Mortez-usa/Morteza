@@ -2,6 +2,7 @@
 import { supabase } from '@/lib/supabase/client';
 import ReactMarkdown from 'react-markdown';
 // import BlogContent from '@/app/components/blog/BlogContent';
+import SubscribeCard from '../../../../components/SubscribeCard/page';
 
 export default async function Gets(props: any) {
 	const params = (await props?.params) as { slug: string } | undefined;
@@ -67,18 +68,21 @@ export default async function Gets(props: any) {
 				</div> */}
 				<div className='flex mb-56 justify-between text-base sm:text-lg md:text-sm lg:text-sm py-2 text-gray-400 mt-16'>
 					<div>
-						<p className='inline pr-1'>Date</p>
+						<p className='inline pr-1'>Published</p>
 						{post.created_at && (
 							<p className='inline pr-1'>
-								{new Date(post.created_at).toLocaleDateString('en-US', {
-									year: 'numeric',
-									month: 'short',
-									day: '2-digit',
-								})}
+								{new Date(post.created_at).toLocaleDateString(
+									'en-US',
+									{
+										year: 'numeric',
+										month: 'short',
+										day: '2-digit',
+									}
+								)}
 							</p>
 						)}
 						<div>
-							<p className='inline pr-1'>Author:</p>
+							<p className='inline pr-1'>Editor:</p>
 							{post.author && (
 								<p className='inline'>{post.author}</p>
 							)}
@@ -86,6 +90,7 @@ export default async function Gets(props: any) {
 					</div>
 				</div>
 			</article>
+			<SubscribeCard />
 		</main>
 	);
 }
