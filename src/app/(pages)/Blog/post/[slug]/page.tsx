@@ -90,7 +90,7 @@ export default async function Gets(props: any) {
 					</div>
 				</div>
 			</article>
-			<SubscribeCard />
+			{/* <SubscribeCard /> */}
 		</main>
 	);
 }
