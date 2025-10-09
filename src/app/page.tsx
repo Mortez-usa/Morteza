@@ -31,10 +31,7 @@ export const metadata: Metadata = {
 	],
 	authors: [{ name: 'Morteza Maddahi' }],
 	creator: 'Morteza Maddahi',
-	viewport: {
-		width: 'device-width',
-		initialScale: 1,
-	},
+	// viewport moved to a dedicated export below (Next.js expects a top-level `viewport` export)
 	openGraph: {
 		type: 'website',
 		title: 'Shaping Space with Purpose: Architectural Thinking by Morteza Maddahi',
@@ -44,7 +41,10 @@ export const metadata: Metadata = {
 	},
 };
 
-
+export const viewport = {
+	width: 'device-width',
+	initialScale: 1,
+};
 
 export default function Page() {
 	return (
