@@ -7,6 +7,7 @@ import Hero from './components/Hero/page';
 import Projects from './(pages)/Projects/page';
 import About from './(pages)/About/page';
 import Contact from './(pages)/Contact/page';
+import Videos from './(pages)/Videos/page';
 import Conceptdesign from './(pages)/Conceptdesign/page';
 import {
 	Card,
@@ -53,6 +54,7 @@ export default function Page() {
 				<div className='flex-grow'>
 					<Hero />
 					<Projects />
+					<Videos />
 					<Conceptdesign />
 					<About />
 					<Contact />

@@ -52,8 +52,8 @@ export default function ContactForm() {
 
 	return (
 		<div>
-			<section className='py-24 px-6 md:px-16 lg:px-24 bg-white'>
-				<div className='max-w-7xl mx-auto'>
+			<section className='py-24 px-6 md:px-16 lg:px-24 bg-zinc-950'>
+				<div className='max-w-7xl mx-auto text-gray-400'>
 					<div className='grid grid-cols-1 lg:grid-cols-2 gap-16'>
 						<div>
 							<h2 className='font-serif text-3xl md:text-4xl mb-4'>
@@ -145,7 +145,7 @@ export default function ContactForm() {
 												}
 												placeholder='Name'
 												required
-												className='border-gray-300 focus:border-accent focus:ring-accent'
+												className='border-gray-300 focus:border-accent focus:ring-accent bg-white'
 											/>
 										</div>
 										<div className='space-y-2'>
@@ -166,7 +166,7 @@ export default function ContactForm() {
 												placeholder='Email'
 												type='email'
 												required
-												className='border-gray-300 focus:border-accent focus:ring-accent'
+												className='border-gray-300 focus:border-accent focus:ring-accent bg-white'
 											/>
 										</div>
 									</div>
@@ -191,7 +191,8 @@ export default function ContactForm() {
 											required
 											minLength={5}
 											maxLength={100}
-											className='border-gray-300 focus:border-accent focus:ring-accent'
+											className='border-gray-300 focus:border-accent focus:ring-accent
+											bg-white'
 										/>
 									</div>
 									<div className='space-y-2'>
@@ -213,11 +214,11 @@ export default function ContactForm() {
 											}
 											placeholder='Message'
 											required
-											className='border-gray-300 focus:border-accent focus:ring-accent min-h-[150px]'
+											className='border-gray-300 focus:border-accent focus:ring-accent min-h-[150px] bg-white'
 										/>
 									</div>
 									<Button
-										className='bg-zinc-900 hover:bg-zinc-950 transition-colors text-white w-full py-6'
+										className='bg-gray-700 hover:bg-gray-600 transition-colors text-white w-full py-6'
 										type='submit'
 										disabled={loading}>
 										{loading ? 'Submitting...' : 'Submit'}

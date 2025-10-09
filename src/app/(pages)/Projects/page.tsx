@@ -49,13 +49,12 @@ export default function page() {
 		<div>
 			<section
 				id='projects'
-				className='py-24 px-6 md:px-16 lg:px-24 bg-white'>
+				className='py-24 px-6 md:px-16 lg:px-24 bg-orange-50'>
 				<div className='max-w-7xl mx-auto'>
 					<div className='mb-16'>
 						<h2 className='font-serif text-3xl md:text-4xl mb-4'>
 							Selected Projects
 						</h2>
-						<div className='w-24 h-1 bg-accent'></div>
 					</div>
 					<div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12'>
 						{projects.map((project) => (

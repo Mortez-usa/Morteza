@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 export default function page() {
 	return (
 		<div>
-			<section className='py-24 px-6 md:px-16 lg:px-24 bg-gray-50'>
+			<section className='py-24 px-6 md:px-16 lg:px-24 bg-orange-50'>
 				<div className='max-w-7xl mx-auto'>
 					<div className='grid grid-cols-1 lg:grid-cols-2 gap-16'>
 						<div>

@@ -8,7 +8,7 @@ import { Button } from '@/app/components/ui/button';
 export default function page() {
 	return (
 		<div className=''>
-			<section className='py-24 px-6 md:px-16 lg:px-24 bg-gray-50 justify-center items-center'>
+			<section className='py-24 px-6 md:px-16 lg:px-24 bg-orange-50 justify-center items-center'>
 				<div className='max-w-7xl mx-auto justify-center'>
 					<div className='grid grid-cols-1 lg:grid-cols-1 gap-4 '>
 						<div className='grid justify-center'>
