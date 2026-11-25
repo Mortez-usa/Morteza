@@ -1,0 +1,62 @@
+name: Security scan
+
+# Free checks on every pull request (drafts once marked ready) and on pushes to main:
+# - Semgrep: high-severity code issues (community rules, no account or token, metrics off)
+# - Gitleaks: secrets such as API keys anywhere in the git history (MIT-licensed CLI, output redacted)
+# Versions are pinned (action by commit, image by digest, Gitleaks by checksum); update them deliberately.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: security-scan-${{ github.ref }}
+  # Cancel superseded pull request runs only; every push to main is scanned to the end.
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  semgrep:
+    name: Semgrep (code)
+    if: github.event_name != 'pull_request' || !github.event.pull_request.draft
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    container:
+      image: semgrep/semgrep:1.187.0@sha256:4150825595755b157d47ddd05d263814b5429617336faa645f3ad15892ca946d
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          persist-credentials: false
+      - name: Scan for high-severity issues
+        run: semgrep scan --config p/default --severity ERROR --error --metrics=off
+
+  gitleaks:
+    name: Gitleaks (secrets)
+    if: github.event_name != 'pull_request' || !github.event.pull_request.draft
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    env:
+      GITLEAKS_VERSION: 8.30.1
+      GITLEAKS_SHA256: 551f6fc83ea457d62a0d98237cbad105af8d557003051f41f3e7ca7b3f2470eb
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Install Gitleaks
+        run: |
+          curl -sSfL -o gitleaks.tgz "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          echo "${GITLEAKS_SHA256}  gitleaks.tgz" | sha256sum -c -
+          tar -xzf gitleaks.tgz -C "$RUNNER_TEMP" gitleaks
+          rm gitleaks.tgz
+      - name: Scan the git history
+        # Known made-up test values, if any, are listed in .gitleaksignore.
+        run: '"$RUNNER_TEMP/gitleaks" git . --redact --no-banner'
+
