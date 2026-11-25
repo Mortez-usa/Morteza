@@ -1,0 +1,48 @@
+name: Security scan
+
+# Free checks on every pull request and on pushes to main:
+# - Semgrep: high-severity code issues (community rules, no account or token needed)
+# - Gitleaks: secrets such as API keys in new commits (free for personal-account repos)
+# Run it by hand from the Actions tab to scan the whole history.
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pull-requests: read
+
+concurrency:
+  group: security-scan-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  semgrep:
+    name: Semgrep (code)
+    # Dependabot pull requests only change dependency versions; skip them to save Actions minutes.
+    if: github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    container:
+      image: semgrep/semgrep
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan for high-severity issues
+        run: semgrep scan --config p/default --severity ERROR --error --metrics=off
+
+  gitleaks:
+    name: Gitleaks (secrets)
+    if: github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_ENABLE_COMMENTS: false
+
